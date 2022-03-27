@@ -113,9 +113,9 @@
             const payload = parseJWT(localStorage.getItem('jwt'))
 
             if ('prof' === payload.tp)
-                location.href='prof.html'
+                location.href='prof/prof.html'
             else
-                location.href='stdt.html'
+                location.href='prof/stdt.html'
         })
         .catch(function (error) {
             console.log(error);
