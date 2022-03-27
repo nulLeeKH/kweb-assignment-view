@@ -69,7 +69,7 @@
 
                         for (const lecture of response.data.list)
                             $('#lectureList')
-                                .append(`<li class="list-group-item" onclick="localStorage.setItem('lecture_id', ${lecture.id}); location.href='lecture.html'" style="width:100%">${lecture.title}</li>`)
+                                .append(`<li class="list-group-item" onclick="localStorage.setItem('lecture_id', ${lecture.id}); location.href='lecture.html'" style="cursor:pointer; width:100%">${lecture.title}</li>`)
                     })
                     .catch(function (error) {
                         console.log(error);
