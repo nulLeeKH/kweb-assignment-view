@@ -11,12 +11,8 @@
     <ul id="lectureList" class="list-group list-group-horizontal-xxl" style="width:100%">
     </ul>
 
-    <div style="text-align:center; margin-top:3%">
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="lectureTitle" style="width:30%">LECTURE TITLE</span>
-            <input id="lt" type="text" class="form-control" placeholder="Lecture Title" aria-label="Lecture Title" aria-describedby="basic-addon1">
-            <button type="submit" class="btn btn-default" onclick="addLecture()">Add lecture</button>
-        </div>
+    <div style="text-align:center; margin-top:3%; width:100%">
+        <button type="submit" class="btn btn-default" onclick="location.href='enroll.html'">Enroll</button>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -25,21 +21,6 @@
 <script>
     function parseJWT(token) {
         return JSON.parse(atob(token.split('.')[1]));
-    }
-
-    function addLecture() {
-        axios.post('https://api.kweb.nulleekh.com/lms/lecture/add', {
-            id: 0,
-            title: document.getElementById('lt').value
-        })
-            .then(function (response) {
-                console.log(response);
-                alert('success');
-            })
-            .catch(function (error) {
-                console.log(error);
-                alert('fail');
-            });
     }
 
     $(document).ready(async function() {
@@ -53,9 +34,9 @@
 
                 const payload = parseJWT(localStorage.getItem('jwt'))
 
-                if ('stdt' === payload.tp) {
-                    alert('you are student')
-                    location.href='../stdt/stdt.html'
+                if ('prof' === payload.tp) {
+                    alert('you are professor')
+                    location.href='../prof/index.html'
                 }
 
                 axios.defaults.headers.get['Authorization'] = response.data.access
