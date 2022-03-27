@@ -106,7 +106,6 @@
             password: sha256(document.getElementById('pwd').value)
         })
         .then(function (response) {
-            console.log(response);
             localStorage.setItem('jwt', response.data.access)
             localStorage.setItem('refresh', response.data.refresh)
             alert('success');

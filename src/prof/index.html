@@ -48,11 +48,8 @@
             refresh: localStorage.getItem('refresh')
         })
             .then(function (response) {
-                console.log(response)
                 localStorage.setItem('jwt', response.data.access)
                 localStorage.setItem('refresh', response.data.refresh)
-
-                const payload = parseJWT(localStorage.getItem('jwt'))
 
                 if ('stdt' === payload.tp) {
                     alert('you are student')
@@ -61,12 +58,9 @@
 
                 axios.defaults.headers.get['Authorization'] = response.data.access
                 axios.defaults.headers.post['Authorization'] = response.data.access
-                console.log(response.data.access)
 
                 axios.get('https://api.kweb.nulleekh.com/lms/lecture/list')
                     .then(function (response) {
-                        console.log(response);
-
                         for (const lecture of response.data.list)
                             $('#lectureList')
                                 .append(`<li class="list-group-item" onclick="localStorage.setItem('lecture_id', ${lecture.id}); location.href='lecture.html'" style="cursor:pointer; width:100%">${lecture.title}</li>`)
