@@ -28,7 +28,7 @@
     }
 
     function addLecture() {
-        axios.post('http://api.kweb.nulleekh.com/lms/lecture/add', {
+        axios.post('https://api.kweb.nulleekh.com/lms/lecture/add', {
             id: 0,
             title: document.getElementById('lt').value
         })
@@ -43,7 +43,7 @@
     }
 
     $(document).ready(async function() {
-        await axios.post('http://api.kweb.nulleekh.com/auth/rf', {
+        await axios.post('https://api.kweb.nulleekh.com/auth/rf', {
             refresh: localStorage.getItem('refresh')
         })
             .then(function (response) {
@@ -62,7 +62,7 @@
                 axios.defaults.headers.post['Authorization'] = response.data.access
                 console.log(response.data.access)
 
-                axios.get('http://api.kweb.nulleekh.com/lms/lecture/list')
+                axios.get('https://api.kweb.nulleekh.com/lms/lecture/list')
                     .then(function (response) {
                         console.log(response);
 

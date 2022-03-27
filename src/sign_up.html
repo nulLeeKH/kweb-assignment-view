@@ -107,7 +107,7 @@
     }
 
     function signUp() {
-        axios.post('http://api.kweb.nulleekh.com/auth/su', {
+        axios.post('https://api.kweb.nulleekh.com/auth/su', {
             username: document.getElementById('unm').value,
             password: sha256(document.getElementById('pwd').value),
             name: document.getElementById('nm').value,
