@@ -114,7 +114,6 @@
         .then(function (response) {
             localStorage.setItem('jwt', response.data.access)
             localStorage.setItem('refresh', response.data.refresh)
-            alert('success');
 
             const payload = parseJWT(localStorage.getItem('jwt'))
 
@@ -125,7 +124,7 @@
         })
         .catch(function (error) {
             console.log(error);
-            alert('fail');
+            alert('Sign in failed!\nPlease check username or password.');
         });
     }
 </script>

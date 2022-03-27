@@ -123,12 +123,12 @@
             type: document.getElementById('tp').value
         })
         .then(function (response) {
-            alert('success');
+            alert('You has been signed up!\nPlease sign in.');
             location.href='.'
         })
         .catch(function (error) {
             console.log(error);
-            alert('fail');
+            alert('Error while sign up!\nPlease check information and try again.')
         });
     }
 </script>

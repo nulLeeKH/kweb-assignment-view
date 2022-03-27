@@ -41,11 +41,11 @@
         axios.get(`https://api.kweb.nulleekh.com/lms/enrol/add?id=${id}`)
             .then(function (response) {
                 console.log(response)
-                alert('done!')
+                alert('enrolled!')
             })
             .catch(function (error) {
                 console.log(error)
-                alert('error!')
+                alert('Error while enrollment!\nPlease try again.')
             })
     }
 
@@ -60,7 +60,7 @@
                 const payload = parseJWT(localStorage.getItem('jwt'))
 
                 if ('prof' === payload.tp) {
-                    alert('you are professor')
+                    alert('You are professor!\nGo to professor page.')
                     location.href='../prof'
                 }
 
@@ -75,12 +75,12 @@
                     })
                     .catch(function (error) {
                         console.log(error);
-                        alert('get lecture list fail');
+                        alert('Cannot get lecture list!\nPlease refresh page.');
                     });
             })
             .catch(function (error) {
                 console.log(error);
-                alert('cannot refresh token');
+                alert('Cannot refresh token!\nPlease sign in again.');
                 location.href = '..'
             });
     })

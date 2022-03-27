@@ -47,12 +47,11 @@
         })
             .then(function (response) {
                 console.log(response);
-                alert('success');
                 location.reload();
             })
             .catch(function (error) {
                 console.log(error);
-                alert('fail');
+                alert('Error while add lecture!\nPlease try again.')
             });
     }
 
@@ -67,7 +66,7 @@
                 const payload = parseJWT(localStorage.getItem('jwt'))
 
                 if ('stdt' === payload.tp) {
-                    alert('you are student')
+                    alert('You are student!\nGo to student page.')
                     location.href='./stdt'
                 }
 
@@ -82,12 +81,12 @@
                     })
                     .catch(function (error) {
                         console.log(error);
-                        alert('get lecture list fail');
+                        alert('Cannot get lecture list!\nPlease refresh page.');
                     });
             })
             .catch(function (error) {
                 console.log(error);
-                alert('cannot refresh token');
+                alert('Cannot refresh token!\nPlease sign in again.');
                 location.href='.'
             });
     })

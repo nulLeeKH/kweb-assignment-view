@@ -49,7 +49,7 @@
                 const payload = parseJWT(localStorage.getItem('jwt'))
 
                 if ('prof' === payload.tp) {
-                    alert('you are professor')
+                    alert('You are professor!\nGo to professor page.')
                     location.href='../prof'
                 }
 
@@ -63,12 +63,12 @@
                     })
                     .catch(function (error) {
                         console.log(error);
-                        alert('get board list fail');
+                        alert('Cannot get board list!\nPlease refresh page.');
                     });
             })
             .catch(function (error) {
                 console.log(error);
-                alert('cannot refresh token');
+                alert('Cannot refresh token!\nPlease sign in again.');
                 location.href = '..'
             });
     })
