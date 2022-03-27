@@ -10,6 +10,10 @@
 </head>
 <body>
 <div style="margin:10%">
+    <div style="text-align:right; margin-bottom:3%; width:100%">
+        <button type="reset" class="btn btn-default" onclick="signOut()">Sign Out</button>
+    </div>
+
     <div class="input-group mb-3">
         <span class="input-group-text" id="boardTitle" style="width:30%">TITLE</span>
         <input id="bt" type="text" class="form-control" placeholder="Board Title" aria-label="Board Title" aria-describedby="basic-addon1">
@@ -71,6 +75,11 @@
                 location.href = '..'
             });
     })
+
+    function signOut() {
+        localStorage.clear()
+        location.href='..'
+    }
 </script>
 </body>
 </html>

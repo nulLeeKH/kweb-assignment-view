@@ -9,6 +9,10 @@
 </head>
 <body>
 <div style="margin:10%">
+    <div style="text-align:right; margin-bottom:3%; width:100%">
+        <button type="reset" class="btn btn-default" onclick="signOut()">Sign Out</button>
+    </div>
+
     <ul id="lectureList" class="list-group list-group-flush" style="width:100%">
     </ul>
 
@@ -59,6 +63,11 @@
                 location.href='.'
             });
     })
+
+    function signOut() {
+        localStorage.clear()
+        location.href='.'
+    }
 </script>
 </body>
 </html>
