@@ -56,7 +56,7 @@
 
                 if ('stdt' === payload.tp) {
                     alert('you are student')
-                    location.href='../stdt/index.html'
+                    location.href='stdt'
                 }
 
                 axios.defaults.headers.get['Authorization'] = response.data.access
@@ -66,7 +66,7 @@
                     .then(function (response) {
                         for (const lecture of response.data.list)
                             $('#lectureList')
-                                .append(`<li class="list-group-item" onclick="localStorage.setItem('lecture_id', ${lecture.id}); location.href='lecture.html'" style="cursor:pointer; width:100%">${lecture.title}</li>`)
+                                .append(`<li class="list-group-item" onclick="localStorage.setItem('lecture_id', ${lecture.id}); location.href='prof/lecture.html'" style="cursor:pointer; width:100%">${lecture.title}</li>`)
                     })
                     .catch(function (error) {
                         console.log(error);
@@ -76,7 +76,7 @@
             .catch(function (error) {
                 console.log(error);
                 alert('cannot refresh token');
-                location.href = '../index.html'
+                location.href='.'
             });
     })
 </script>
