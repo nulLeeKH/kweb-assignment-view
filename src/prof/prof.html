@@ -55,7 +55,7 @@
 
                 if ('stdt' === payload.tp) {
                     alert('you are student')
-                    location.href='stdt/stdt.html'
+                    location.href='../stdt/stdt.html'
                 }
 
                 axios.defaults.headers.get['Authorization'] = response.data.access
@@ -68,7 +68,7 @@
 
                         for (const lecture of response.data.list)
                             $('#lectureList')
-                                .append(`<li class="list-group-item" onclick="localStorage.setItem('lecture_id', ${lecture.id}); location.href='prof/lecture.html'" style="width:100%">${lecture.title}</li>`)
+                                .append(`<li class="list-group-item" onclick="localStorage.setItem('lecture_id', ${lecture.id}); location.href='lecture.html'" style="width:100%">${lecture.title}</li>`)
                     })
                     .catch(function (error) {
                         console.log(error);
@@ -77,7 +77,7 @@
             })
             .catch(function (error) {
                 console.log(error);
-                location.href = 'index.html'
+                location.href = '../index.html'
             });
     })
 </script>
