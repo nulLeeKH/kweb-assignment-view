@@ -41,7 +41,6 @@
 
                 axios.defaults.headers.get['Authorization'] = response.data.access
                 axios.defaults.headers.post['Authorization'] = response.data.access
-                console.log(response.data.access)
 
                 axios.get('https://api.kweb.nulleekh.com/lms/lecture/list')
                     .then(function (response) {
