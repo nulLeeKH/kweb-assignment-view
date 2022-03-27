@@ -46,7 +46,7 @@
                 axios.get(`https://api.kweb.nulleekh.com/lms/board/list?id=${localStorage.getItem('lecture_id')}`)
                     .then(function (response) {
                         for (const board of response.data.list)
-                            $('#lectureList')
+                            $('#boardList')
                                 .append(`<li class="list-group-item" onclick="localStorage.setItem('board_id', ${board.id}); location.href='board.html'" style="cursor:pointer; width:100%">${board.title}</li>`)
                     })
                     .catch(function (error) {
