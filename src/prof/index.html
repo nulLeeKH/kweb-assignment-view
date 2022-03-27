@@ -28,7 +28,7 @@
         <div class="input-group mb-3">
             <span class="input-group-text" id="lectureTitle" style="width:30%">LECTURE TITLE</span>
             <input id="lt" type="text" class="form-control" placeholder="Lecture Title" aria-label="Lecture Title" aria-describedby="basic-addon1">
-            <button type="submit" class="btn btn-default" onclick="addLecture()">Add lecture</button>
+            <button type="submit" class="btn btn-default" onclick="lectureAdd()">Add lecture</button>
         </div>
     </div>
 </div>
@@ -40,7 +40,7 @@
         return JSON.parse(atob(token.split('.')[1]));
     }
 
-    function addLecture() {
+    function lectureAdd() {
         axios.post('https://api.kweb.nulleekh.com/lms/lecture/add', {
             id: 0,
             title: document.getElementById('lt').value
@@ -95,6 +95,12 @@
         localStorage.clear()
         location.href='.'
     }
+
+    $(document).ready(async function() {
+        $("#lt").keypress(function (e) {
+            if (13 === e.keyCode) lectureAdd()
+        })
+    })
 </script>
 </body>
 </html>

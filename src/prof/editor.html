@@ -89,6 +89,12 @@
         localStorage.clear()
         location.href='..'
     }
+
+    $(document).ready(async function() {
+        $("#bt").keypress(function (e) {
+            if (13 === e.keyCode) boardAdd()
+        })
+    })
 </script>
 </body>
 </html>

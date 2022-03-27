@@ -31,6 +31,7 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
     function parseJWT(token) {
         return JSON.parse(atob(token.split('.')[1]));
@@ -127,6 +128,15 @@
             alert('Sign in failed!\nPlease check username or password.');
         });
     }
+
+    $(document).ready(async function() {
+        $("#umn").keypress(function (e) {
+            if (13 === e.keyCode) signIn()
+        })
+        $("#pwd").keypress(function (e) {
+            if (13 === e.keyCode) signIn()
+        })
+    })
 </script>
 </body>
 </html>
