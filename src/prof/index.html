@@ -51,6 +51,8 @@
                 localStorage.setItem('jwt', response.data.access)
                 localStorage.setItem('refresh', response.data.refresh)
 
+                const payload = parseJWT(localStorage.getItem('jwt'))
+
                 if ('stdt' === payload.tp) {
                     alert('you are student')
                     location.href='../stdt/index.html'
