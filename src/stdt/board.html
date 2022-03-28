@@ -56,7 +56,7 @@
                 axios.defaults.headers.get['Authorization'] = response.data.access
                 axios.defaults.headers.post['Authorization'] = response.data.access
 
-                axios.get(`https://api.kweb.nulleekh.com/lms/board/detail?id=${localStorage.getItem('board_id')}`)
+                axios.get(`https://api.kweb.nulleekh.com/lms/board/detail?board_id=${localStorage.getItem('board_id')}&id=${localStorage.getItem('lecture_id')}`)
                     .then(function (response) {
                         $('#bt').append(response.data.title)
                         $('#bc').append(response.data.content)
